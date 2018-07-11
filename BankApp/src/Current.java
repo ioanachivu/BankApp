@@ -6,7 +6,12 @@ public class Current extends Account {
 	
 	public Current (String name, String ssn, int initialDeposit) {
 		super(name,ssn,initialDeposit);
-		System.out.println("New Current Account");
-		
+		accNumber = "2"+accNumber;
+	}
+	
+	@Override
+	public void showInfo() {
+		super.showInfo();
+		System.out.println("Account type: Current");
 	}
 }

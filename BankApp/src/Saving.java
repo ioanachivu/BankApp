@@ -24,4 +24,10 @@ public class Saving extends Account {
 				"\nSafety Depositbox ID: "+ safetyBoxID+
 				"\nSafety Depositbox Key: "+ safetyBoxKey);
 	}
+
+	@Override
+	public void setRate() {
+		rate = getBaseRate() - .25;
+		
+	}
 }

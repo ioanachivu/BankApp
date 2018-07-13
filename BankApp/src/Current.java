@@ -29,4 +29,10 @@ public class Current extends Account {
 				"\nDebit Card#: "+ debitCardNo+
 				"\nCard PIN: "+ debitCardPIN);
 	}
+
+	@Override
+	public void setRate() {
+		rate = getBaseRate() * .15;
+		
+	}
 }

@@ -8,5 +8,8 @@ public class Main {
 		cracc1.showInfo();
 		System.out.println("---------------------------------");
 		svacc1.showInfo();
+		
+		svacc1.deposit(100);
+		cracc1.withdraw(1000);
 }
 }

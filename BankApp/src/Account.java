@@ -30,5 +30,17 @@ public abstract class Account implements IBaseRate {
 				"\nAcc#: "+accNumber +
 				"\nBalance: "+balance);
 	}
+	
+	// set a random password method
+		public String setPassword(int length) {
+			String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVXYW0123456789!#$";
+			char[] p = new char[length];
+			
+			for(int i=0;i<length;i++) {
+				int rand = (int) (Math.random()*passwordSet.length());
+				p[i]= passwordSet.charAt(rand);
+			}
+			return new String(p);
+		}
 }
 

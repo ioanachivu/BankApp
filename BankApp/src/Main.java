@@ -6,6 +6,7 @@ public class Main {
 		Saving svacc1 = new Saving("Dwane Johnson","15697453",2100);
 		
 		cracc1.showInfo();
+		System.out.println("---------------------------------");
 		svacc1.showInfo();
 }
 }

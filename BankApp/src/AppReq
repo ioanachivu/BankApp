@@ -11,7 +11,7 @@ account or Savings account
 
 -------------------------------------------------------------------------------------------
 
-The application does the following:
+The application should do the following:
 - read a .cvs file of names, SSNs, account type and initial deposit
 - both savings and current accounts share the following properties:
 	* deposit()

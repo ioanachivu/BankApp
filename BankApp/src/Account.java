@@ -7,6 +7,7 @@ public abstract class Account implements IBaseRate {
 	String accNumber;
 	double rate;
 	static int index = 10000;
+	double accruedInterest;
 
 	public Account(String name, String ssn, int initialDeposit) {
 		this.name = name;
@@ -17,6 +18,8 @@ public abstract class Account implements IBaseRate {
 		this.accNumber = setAccNo();
 		// set base rate
 		setRate();
+		// find out the accrue interest
+		compound();
 	}
 
 	private String setAccNo() {
@@ -40,9 +43,14 @@ public abstract class Account implements IBaseRate {
 	}
 
 	public void transfer(String toWhere, double amount) {
-		balance = balance - amount;
+		balance -= amount;
 		System.out.println("Transfering $" + amount + " to " + toWhere);
 		printBalance();
+	}
+	
+	public void compound() {
+		accruedInterest = balance* (rate/100);
+		balance += accruedInterest;
 	}
 	
 	public void printBalance() {
@@ -53,7 +61,8 @@ public abstract class Account implements IBaseRate {
 		System.out.println("Name: " + name + 
 						"\nAcc#: " + accNumber + 
 						"\nBalance: " + balance + 
-						"\nRate: " + rate + "%");
+						"\nRate: " + rate + "%" +
+						"\nAccrued Interest: $" + accruedInterest);
 	}
 
 	// set a random password method

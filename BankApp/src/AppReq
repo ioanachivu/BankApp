@@ -8,20 +8,20 @@ Done:
 - Current Account holders are assigned a Debit Card with a 12-digit number and a 4-digit PIN	
 - the showInfo() method should reveal relevant account information as well as information specific to the Current
 account or Savings account	
-- both accounts will use an interface that determines the base interest rate:
+- both accounts will use an interface that determines the base interest rate and then show th accrued interest:
 	- savings accounts will use .25 points less than the base rate
 	- current accounts will use 15% of the base rate
+- both savings and current accounts share the following properties:
+	* deposit()
+	* withdraw()
+	* transfer()
+	* showInfo()	
+
 
 -------------------------------------------------------------------------------------------
 
 The application should do the following:
 - read a .cvs file of names, SSNs, account type and initial deposit
-- both savings and current accounts share the following properties:
-	* deposit()
-	* withdraw()
-	* transfer()
-	* showInfo()
-	
 - adding/ updating/ deleting an account
 - searching for an account by Account# or SSN
 - depositing/ withdrawing money from/to an account

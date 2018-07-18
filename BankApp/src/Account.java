@@ -11,8 +11,7 @@ public abstract class Account implements IBaseRate {
 	private static int index = 10000;
 	private double accruedInterest;
 	
-
-	public Account(String name, String ssn, int initialDeposit) {
+	public Account(String name, String ssn, double initialDeposit) {
 		this.name = name;
 		this.ssn = ssn;
 		this.balance = initialDeposit;

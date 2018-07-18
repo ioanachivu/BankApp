@@ -5,7 +5,7 @@ public class Current extends Account {
 	private String debitCardNo = "";
 	private int debitCardPIN;
 	
-	public Current (String name, String ssn, int initialDeposit) {
+	public Current (String name, String ssn, double initialDeposit) {
 		super(name,ssn,initialDeposit);
 		accNumber = "2"+accNumber;
 		// set debit card method

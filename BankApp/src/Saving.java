@@ -4,7 +4,7 @@ public class Saving extends Account {
 	private int safetyBoxID;
 	private int safetyBoxKey;
 	
-	public Saving (String name,String ssn, int initialDeposit) {
+	public Saving (String name,String ssn, double initialDeposit) {
 		super(name,ssn,initialDeposit);
 		accNumber = "1"+accNumber;
 		// set the deposit box

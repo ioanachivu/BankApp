@@ -2,15 +2,12 @@ import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
-	 
-		List<String[]> newAccountHolder = CSV.fileReading("C:\\Users\\ChivuIoanaAlexandra\\git\\BankApp\\BankApp\\src\\bankFile.csv");
 		
-		for(String[] v: newAccountHolder) {
-			System.out.println("New Account:");
-			System.out.println(v[0]);
-			System.out.println(v[1]);
-			System.out.println(v[2]);
-			System.out.println(v[3]);
+		Bank bank = new Bank();
+		bank.fileReading();
+		
+		for(Account a: bank.accList) {
+			a.showInfo();
 		}
 		
 		/*

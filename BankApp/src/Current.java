@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class Current extends Account {
 	
-	String debitCardNo = "";
-	int debitCardPIN;
+	private String debitCardNo = "";
+	private int debitCardPIN;
 	
 	public Current (String name, String ssn, int initialDeposit) {
 		super(name,ssn,initialDeposit);

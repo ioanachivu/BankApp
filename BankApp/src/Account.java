@@ -1,13 +1,16 @@
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Account implements IBaseRate {
 
-	String name;
-	String ssn;
-	double balance;
-	String accNumber;
-	double rate;
-	static int index = 10000;
-	double accruedInterest;
+	private String name;
+	private String ssn;
+	private double balance;
+	protected String accNumber;
+	protected double rate;
+	private static int index = 10000;
+	private double accruedInterest;
+	
 
 	public Account(String name, String ssn, int initialDeposit) {
 		this.name = name;

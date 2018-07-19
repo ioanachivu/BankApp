@@ -1,4 +1,3 @@
-import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
@@ -6,9 +5,11 @@ public class Main {
 		Bank bank = new Bank();
 		bank.fileReading();
 		
-		for(Account a: bank.accList) {
-			a.showInfo();
-		}
+//		for(Account a: bank.accList) {
+//			a.showInfo();
+//		}
+		
+		bank.deposit("13810001696",150);
 		
 		/*
 		Current cracc1 = new Current("John Snow","25789634",1500);
@@ -19,6 +20,8 @@ public class Main {
 		
 		svacc1.deposit(100);
 		cracc1.withdraw(1000);
+		
+		deposit(100,13810001696)
 		*/
 		
 

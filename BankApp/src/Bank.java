@@ -10,6 +10,34 @@ public class Bank {
 	
 	List<Account> accList = new LinkedList<Account>();
 
+	public void deposit(String accNo,double amount) {
+		for(Account a: accList) {
+			if(a.getAccNumer().equals(accNo)) {
+				a.setBalance(a.getBalance() + amount);
+				System.out.println("Depositing: $" + amount);
+				a.printBalance();
+			}
+		}
+	}
+
+	public void withdraw(String accNo,double amount) {
+		for(Account a: accList) {
+			if(a.getAccNumer().equals(accNo)) {
+				a.setBalance(a.getBalance() - amount);
+				System.out.println("Withdrawing: $" + amount);
+				a.printBalance();
+			}
+		}
+	}
+
+	/*
+	  public void transfer(String toWhere, double amount) {
+		balance -= amount;
+		System.out.println("Transfering $" + amount + " to " + toWhere);
+		printBalance();
+	}
+	*/
+	
 	public void fileReading() {
 		
         File file = new File("C:\\Users\\ChivuIoanaAlexandra\\git\\BankApp\\BankApp\\src\\bankFile.csv");
@@ -39,4 +67,17 @@ public class Bank {
 	            System.out.println("Can't read file");
 	        } 
 	    }
+	
+	
+	// set a random password method
+		public String setPassword(int length) {
+			String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVXYW0123456789!#$";
+			char[] p = new char[length];
+
+			for (int i = 0; i < length; i++) {
+				int rand = (int) (Math.random() * passwordSet.length());
+				p[i] = passwordSet.charAt(rand);
+			}
+			return new String(p);
+		}
 }

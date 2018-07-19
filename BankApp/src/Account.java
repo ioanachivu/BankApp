@@ -1,5 +1,3 @@
-import java.util.HashSet;
-import java.util.Set;
 
 public abstract class Account implements IBaseRate {
 
@@ -26,33 +24,41 @@ public abstract class Account implements IBaseRate {
 
 	private String setAccNo() {
 		String lastTwoOfSSN = ssn.substring(ssn.length() - 2, ssn.length());
-		int randNo = (int) (Math.random() * Math.pow(10, 3));
+		// int randNo = (int) (Math.random() * Math.pow(10, 3)); 
+		// commented this out so that the accounts have the same accNo every thine the app runs
+		int randNo = 123;
 		return lastTwoOfSSN + index + randNo;
 	}
 
 	public abstract void setRate();
-
-	public void deposit(double amount) {
-		balance = balance + amount;
-		System.out.println("Depositing: $" + amount);
-		printBalance();
-	}
-
-	public void withdraw(double amount) {
-		balance = balance - amount;
-		System.out.println("Withdrawing: $" + amount);
-		printBalance();
-	}
-
-	public void transfer(String toWhere, double amount) {
-		balance -= amount;
-		System.out.println("Transfering $" + amount + " to " + toWhere);
-		printBalance();
-	}
 	
 	public void compound() {
 		accruedInterest = balance* (rate/100);
 		balance += accruedInterest;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getAccNumer() {
+		return accNumber;
+	}
+	
+	public String getSsn() {
+		return ssn;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
 	}
 	
 	public void printBalance() {
@@ -65,17 +71,5 @@ public abstract class Account implements IBaseRate {
 						"\nBalance: " + balance + 
 						"\nRate: " + rate + "%" +
 						"\nAccrued Interest: $" + accruedInterest);
-	}
-
-	// set a random password method
-	public String setPassword(int length) {
-		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVXYW0123456789!#$";
-		char[] p = new char[length];
-
-		for (int i = 0; i < length; i++) {
-			int rand = (int) (Math.random() * passwordSet.length());
-			p[i] = passwordSet.charAt(rand);
-		}
-		return new String(p);
 	}
 }

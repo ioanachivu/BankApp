@@ -37,20 +37,20 @@ public abstract class Account implements IBaseRate {
 		balance += accruedInterest;
 	}
 	
+	public void showInfo() {
+				System.out.println("Name: " + name + 
+						"\nAcc#: " + accNumber + 
+						"\nBalance: " + balance + 
+						"\nRate: " + rate + "%" +
+						"\nAccrued Interest: $" + accruedInterest);
+		}
+	
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public String getAccNumer() {
-		return accNumber;
-	}
-	
-	public String getSsn() {
-		return ssn;
 	}
 
 	public double getBalance() {
@@ -59,6 +59,10 @@ public abstract class Account implements IBaseRate {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+	
+	public String getSsn() {
+		return ssn;
 	}
 	
 	public String getAccNumber() {

@@ -16,13 +16,13 @@ public class Saving extends Account {
 		safetyBoxKey = (int)(Math.random()*Math.pow(10, 4));
 	}
 	
-	@Override
 	public void showInfo() {
 		super.showInfo();
 		System.out.println(
 				"Your Savings Account has been created :"+
 				"\nSafety Depositbox ID: "+ safetyBoxID+
-				"\nSafety Depositbox Key: "+ safetyBoxKey);
+				"\nSafety Depositbox Key: "+ safetyBoxKey +
+				"\n**************************");
 	}
 
 	@Override

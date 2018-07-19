@@ -10,29 +10,16 @@ public class Bank {
 	
 	List<Account> accList = new LinkedList<Account>();
 	
-	public void showInfo(String info) {
-		for( Account a: accList) {
-			if(a.getAccNumer().equals(info)|| a.getName().equals(info)) {
-				System.out.println("Name: " + name + 
-						"\nAcc#: " + accNumber + 
-						"\nBalance: " + balance + 
-						"\nRate: " + rate + "%" +
-						"\nAccrued Interest: $" + accruedInterest +
-						"\n**************************");
-			}
-		}
-	}
-	
-	// add addount method
+	// add account method
 	
 	// delete account method
 	
 	// update account method
 	
-	// deposit funds methos
+	// deposit funds methods
 	public void deposit(String accNo,double amount) {
 		for(Account a: accList) {
-			if(a.getAccNumer().equals(accNo)) {
+			if(a.getAccNumber().equals(accNo)) {
 				a.setBalance(a.getBalance() + amount);
 				System.out.println("Depositing: $" + amount);
 				a.printBalance();
@@ -43,7 +30,7 @@ public class Bank {
 	// withdraw funds method
 	public void withdraw(String accNo,double amount) {
 		for(Account a: accList) {
-			if(a.getAccNumer().equals(accNo)) {
+			if(a.getAccNumber().equals(accNo)) {
 				a.setBalance(a.getBalance() - amount);
 				System.out.println("Withdrawing: $" + amount);
 				a.printBalance();
@@ -52,17 +39,18 @@ public class Bank {
 	}
 
 	// transfer funds method
-	  public void transfer(String fromWhere, String toWhere, double amount) {
-		  for(Account a: accList) {
-				if(a.getAccNumer().equals(fromWhere)) {
-					for(Account b: accList) {
-						a.setBalance(a.getBalance() - amount);
-						b.setBalance(b.getBalance() + amount);
-					}
+	public void transfer(String fromWhere, String toWhere, double amount) {
+		for (Account a : accList) {
+			if (a.getAccNumber().equals(fromWhere)) {
+				for (Account b : accList) {
+					a.setBalance(a.getBalance() - amount);
+					b.setBalance(b.getBalance() + amount);
 				}
-		System.out.println("Transferring $" + amount + " to " + toWhere);
-		a.printBalance();
-		  } 
+			}
+			System.out.println("Transferring $" + amount + " to " + toWhere);
+			a.printBalance();
+			break;
+		}
 	}
 	
 	public void fileReading() {

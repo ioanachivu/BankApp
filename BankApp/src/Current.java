@@ -21,13 +21,14 @@ public class Current extends Account {
 		debitCardPIN = (int) (Math.random() * Math.pow(10, 4));
 	}
 	
-	@Override
+
 	public void showInfo() {
 		super.showInfo();
 		System.out.println(
 				"Your Current Account has been created :"+
 				"\nDebit Card#: "+ debitCardNo+
-				"\nCard PIN: "+ debitCardPIN);
+				"\nCard PIN: "+ debitCardPIN +
+				"\n**************************");
 	}
 
 	@Override

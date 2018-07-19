@@ -25,8 +25,8 @@ public abstract class Account implements IBaseRate {
 	private String setAccNo() {
 		String lastTwoOfSSN = ssn.substring(ssn.length() - 2, ssn.length());
 		// int randNo = (int) (Math.random() * Math.pow(10, 3)); 
-		// commented this out so that the accounts have the same accNo every thine the app runs
-		int randNo = 123;
+		// commented this out so that the accounts have the same accNo (easier to run this way and verify new methods)
+		int randNo = 257;
 		return lastTwoOfSSN + index + randNo;
 	}
 
@@ -61,15 +61,22 @@ public abstract class Account implements IBaseRate {
 		this.balance = balance;
 	}
 	
+	public String getAccNumber() {
+		return accNumber;
+	}
+
+	public double getRate() {
+		return rate;
+	}
+
+	public double getAccruedInterest() {
+		return accruedInterest;
+	}
+
+	
 	public void printBalance() {
 		System.out.println("Your balance is: $"+ balance);
 	}
 
-	public void showInfo() {
-		System.out.println("Name: " + name + 
-						"\nAcc#: " + accNumber + 
-						"\nBalance: " + balance + 
-						"\nRate: " + rate + "%" +
-						"\nAccrued Interest: $" + accruedInterest);
-	}
+	
 }

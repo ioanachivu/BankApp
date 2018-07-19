@@ -9,7 +9,27 @@ import java.util.List;
 public class Bank {
 	
 	List<Account> accList = new LinkedList<Account>();
-
+	
+	public void showInfo(String info) {
+		for( Account a: accList) {
+			if(a.getAccNumer().equals(info)|| a.getName().equals(info)) {
+				System.out.println("Name: " + name + 
+						"\nAcc#: " + accNumber + 
+						"\nBalance: " + balance + 
+						"\nRate: " + rate + "%" +
+						"\nAccrued Interest: $" + accruedInterest +
+						"\n**************************");
+			}
+		}
+	}
+	
+	// add addount method
+	
+	// delete account method
+	
+	// update account method
+	
+	// deposit funds methos
 	public void deposit(String accNo,double amount) {
 		for(Account a: accList) {
 			if(a.getAccNumer().equals(accNo)) {
@@ -19,7 +39,8 @@ public class Bank {
 			}
 		}
 	}
-
+	
+	// withdraw funds method
 	public void withdraw(String accNo,double amount) {
 		for(Account a: accList) {
 			if(a.getAccNumer().equals(accNo)) {
@@ -30,13 +51,19 @@ public class Bank {
 		}
 	}
 
-	/*
-	  public void transfer(String toWhere, double amount) {
-		balance -= amount;
-		System.out.println("Transfering $" + amount + " to " + toWhere);
-		printBalance();
+	// transfer funds method
+	  public void transfer(String fromWhere, String toWhere, double amount) {
+		  for(Account a: accList) {
+				if(a.getAccNumer().equals(fromWhere)) {
+					for(Account b: accList) {
+						a.setBalance(a.getBalance() - amount);
+						b.setBalance(b.getBalance() + amount);
+					}
+				}
+		System.out.println("Transferring $" + amount + " to " + toWhere);
+		a.printBalance();
+		  } 
 	}
-	*/
 	
 	public void fileReading() {
 		

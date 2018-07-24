@@ -5,13 +5,15 @@ public class Main {
 		Bank bank = new Bank();
 		bank.fileReading();
 		
-		for(Account a: bank.accList) {
-			a.showInfo();
-		}
+//		for(Account a: bank.accList) {
+//			a.showInfo();
+//		}
 		
-		bank.deposit("13810001257",150);
-		bank.withdraw("28310002257", 22);
-		bank.transfer("27510003257", "13810001257", 452);
+		bank.addAccount();
+		
+		//bank.deposit("13810001257",150);
+		//bank.withdraw("28310002257", 22);
+		//bank.transfer("27510003257", "13810001257", 452);
 		
 		/*
 		Current cracc1 = new Current("John Snow","25789634",1500);

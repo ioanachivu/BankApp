@@ -5,12 +5,37 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Bank {
 	
 	List<Account> accList = new LinkedList<Account>();
 	
 	// add account method
+	public void addAccount() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please specify the type of account that you want to open (Savings/ Current):");
+		String type = in.nextLine();
+		
+		System.out.println("Please insert the name of the account holder:");
+		String name = in.nextLine();
+		System.out.println("Please insert the SSN:");
+		String ssn = in.nextLine();
+		System.out.println("Please insert the initial deposit:");
+		double initDeposit = in.nextDouble(); 
+		
+		if(type.equals("Savings")) {
+			accList.add(new Saving(name,ssn,initDeposit));
+			Account acc = accList.get(accList.size() - 1);
+			acc.showInfo();
+		} 
+		else if(type.equals("Current")) {
+			accList.add(new Current(name,ssn,initDeposit));	
+			Account acc = accList.get(accList.size() - 1);
+			acc.showInfo();
+		}
+		else System.out.println("Incorrect selection");
+	}
 	
 	// delete account method
 	

@@ -37,7 +37,20 @@ public class Bank {
 		else System.out.println("Incorrect selection");
 	}
 	
-	// delete account method
+	// delete account method using the account#
+	public void deleteAccount() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please insert the account number:");
+		String accNo = in.nextLine();
+		
+		for(Account a: accList) {
+			if(a.getAccNumber().equals(accNo)) {
+				accList.remove(a);
+				break;
+			}
+		}
+		System.out.println("Account: "+ accNo + " has been deleted");
+	}
 	
 	// update account method
 	

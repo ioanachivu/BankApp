@@ -24,8 +24,8 @@ The application should do the following:
 
 - adding/ updating/ deleting an account
 - searching for an account by Account# or SSN
-- depositing/ withdrawing money from/to an account
 - displaying a list of unused/out of date accounts
+- Start GUI
 
 --------------------Learning objectives:------------------------------------
 - learn to develop a robust application architecture

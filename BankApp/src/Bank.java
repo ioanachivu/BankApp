@@ -68,7 +68,7 @@ public class Bank {
 		else System.out.println("Incorrect selection");
 	}
 	
-// delete account method using the account#
+// delete account method using the account #
 	public void deleteAccount() {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please insert the account number:");

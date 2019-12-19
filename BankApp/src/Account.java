@@ -1,3 +1,4 @@
+// template for all future accounts
 
 public abstract class Account implements IBaseRate {
 

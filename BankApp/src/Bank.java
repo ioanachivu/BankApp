@@ -1,3 +1,5 @@
+// contains all actions that take place in a bank: dwposit, withdraw, verify funds, transfer
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
